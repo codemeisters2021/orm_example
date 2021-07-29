@@ -1,0 +1,43 @@
+version: '3'
+services:
+    web:
+	 image: php:7.3-apache
+          volumes:
+               - .:/var/www/html
+          ports:
+               - "8002:80"
+          links:
+               - database
+          depends_on:
+               - database
+
+    database:
+          image: mysql:8.0.22
+          environment:
+              - MYSQL_DATABASE=${DB_DATABASE}
+              - MYSQL_USER=${DB_USER}
+              - MYSQL_PASSWORD=${DB_PASSWORD}
+              - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+          volumes:
+              - ./.docker/mysql/data:/var/lib/mysql
+          env_file:
+              - .env
+
+    phpmyadmin:
+          image: phpmyadmin
+          restart: always
+          environment:
+              PMA_USER: ${DB_USER}
+              PMA_PASSWORD: ${DB_PASSWORD}
+              PMA_HOST: database
+              PMA_PORT: 3306
+              PMA_ARBITRARY: 1
+          ports:
+              - "1002:80"
+          links:
+              - database
+          depends_on:
+              - database
+          env_file:
+              - .env
+   
