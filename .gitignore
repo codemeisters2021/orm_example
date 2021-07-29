@@ -1,6 +1,5 @@
-
+.docker/mysql/data/*
 /vendor
 /.idea
-.env
 .env.testing
 .phpunit.result.cache

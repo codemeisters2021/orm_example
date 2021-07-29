@@ -1,15 +1,15 @@
 version: '3'
 services:
     web:
-	 image: php:7.3-apache
-          volumes:
-               - .:/var/www/html
-          ports:
-               - "8002:80"
-          links:
-               - database
-          depends_on:
-               - database
+        image: php:7.3-apache
+        volumes:
+             - .:/var/www/html
+        ports:
+             - "8002:80"
+        links:
+             - database
+        depends_on:
+             - database
 
     database:
           image: mysql:8.0.22
@@ -40,4 +40,4 @@ services:
               - database
           env_file:
               - .env
-   
+
