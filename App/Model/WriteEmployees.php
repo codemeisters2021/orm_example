@@ -2,7 +2,7 @@
 
 namespace App\Model;
 
-class WriteEmployees extends Employees
+class WriteEmployees extends Employee
 {
     /**
      * @param mixed $firstName

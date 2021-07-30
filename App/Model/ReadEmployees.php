@@ -2,8 +2,16 @@
 
 namespace App\Model;
 
-class ReadEmployees extends Employees
+class ReadEmployees extends Employee
 {
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
     /**
      * @return mixed
      */

@@ -4,6 +4,15 @@ namespace App\Model;
 
 class Company
 {
-    private $id;
-    private $name;
+    protected $id;
+    protected $name;
+
+    /**
+     * Company constructor.
+     * @param $name
+     */
+    public function __construct($name)
+    {
+        $this->name = $name;
+    }
 }

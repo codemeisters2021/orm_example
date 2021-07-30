@@ -1,0 +1,29 @@
+App\Model\Employee:
+  type: entity
+  repositoryClass: App\Repository\EmployeeRepository
+  table: employees
+  indexes:
+    name_index:
+      columns: [ firstName ]
+  id:
+    id:
+      type: integer
+      generator:
+        strategy: AUTO
+  fields:
+    firstName:
+      type: string
+      length: 50
+    lastName:
+      type: string
+      length: 50
+    position:
+      type: string
+      length: 50
+  manyToOne:
+    company:
+      targetEntity: App\Model\Company
+      joinColumn:
+        name: company_id
+        referencedColumnName: id
+        onDelete: CASCADE
