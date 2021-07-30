@@ -22,7 +22,7 @@ App\Model\Employee:
       length: 50
   manyToOne:
     company:
-      targetEntity: App\Model\Company
+      targetEntity: App\Model\ReadCompany
       joinColumn:
         name: company_id
         referencedColumnName: id

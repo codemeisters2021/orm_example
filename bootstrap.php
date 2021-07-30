@@ -7,7 +7,7 @@ use Doctrine\ORM\EntityManager;
 require_once "vendor/autoload.php";
 
 $namespaces = [
-    'config/*.yaml' => 'App\Model',
+    'config/*.yml' => 'App\Model',
 ];
 $driver = new \Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver($namespaces);
 $driver->setGlobalBasename('global'); // global.orm.yml

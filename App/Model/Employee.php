@@ -4,7 +4,7 @@ namespace App\Model;
 
 use App\Model\Company;
 
-class Employee
+abstract class Employee
 {
     protected $id;
     protected $firstName;

@@ -2,6 +2,8 @@
 
 namespace App\Model;
 
+use App\Model\Company;
+
 class ReadCompany extends Company
 {
     /**
