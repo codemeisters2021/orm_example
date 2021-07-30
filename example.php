@@ -11,7 +11,9 @@ require_once 'bootstrap.php';
  * @var EntityManager $entityManager
  */
 $employeeRepository = $entityManager->getRepository(Employee::class);
-
+$queryBuilder = $employeeRepository->createQueryBuilder('e');
+$queryBuilder->select('id');
+$queryBuilder->getQuery()->getResult();
 $newCompany = new Company('name');
 $entityManager->persist($newCompany);
 

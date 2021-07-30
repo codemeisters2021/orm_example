@@ -8,6 +8,15 @@ class Position
     private $name;
 
     /**
+     * Position constructor.
+     * @param $name
+     */
+    public function __construct(string $name = null)
+    {
+        $this->name = $name;
+    }
+
+    /**
      * @return mixed
      */
     public function getId()
@@ -29,6 +38,4 @@ class Position
     {
         $this->name = $name;
     }
-
-
 }
